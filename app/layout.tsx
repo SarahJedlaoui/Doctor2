@@ -1,7 +1,6 @@
 import './globals.css';
 import Navbar from './components/Navbar/index';
-import Footer from './components/Footer/Footer';
-
+import Head from "next/head";
 
 export const metadata = {
   title: 'Ketchen',
@@ -16,10 +15,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body>
-        <Navbar />
+       
         {children}
-     
+
       </body>
     </html>
   )

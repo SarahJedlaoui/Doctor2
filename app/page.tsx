@@ -5,14 +5,12 @@ import Expert from './components/Expert/index';
 import Gallery from './components/Gallery/index';
 import Newsletter from './components/Newsletter/Newsletter';
 import FloatingChatBar from './components/FloatingChatBar/index';
-
+import TrendingTopics from './components/Topics/index'
 
 export default function Home() {
   return (
     <main>
-      <Banner />
-      <Features />
-      <FloatingChatBar />
+      <TrendingTopics />
     </main>
   )
 }

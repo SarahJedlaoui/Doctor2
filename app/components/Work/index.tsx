@@ -204,7 +204,7 @@ const Work = () => {
                                  {/* Image Section */}
                                  <div className="w-20 h-20 -mb-12 ">
                                     <img
-                                        src="/images/Banner/doctor.svg" // Update to the correct image path
+                                        src="/images/Banner/doctor.svg"
                                         alt="Dr. Abby"
                                         className="w-35 h-35 object-cover"
                                     />

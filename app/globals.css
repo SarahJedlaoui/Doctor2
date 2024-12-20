@@ -28,6 +28,15 @@ html:not([data-scroll="0"]) .navbar {
 .card-b {
   background: linear-gradient(180deg, #F8F6F6 0%, #F8F6F6 0.01%, rgba(248, 246, 246, 0) 100%);
 }
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
 
 .ls-51 {
   letter-spacing: 0.515em;
