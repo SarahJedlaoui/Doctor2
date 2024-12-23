@@ -12,11 +12,12 @@ import EditIcon from "@mui/icons-material/Edit";
 import FolderIcon from "@mui/icons-material/Folder";
 import SendIcon from "@mui/icons-material/Send";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useRouter } from "next/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const AdjustContentPage = () => {
+  const router = useRouter();
   const [messages, setMessages] = useState<string[]>([
     "Hi, I’m here to help! What changes would you like to make to the ADHD module?",
   ]);
@@ -41,7 +42,7 @@ const AdjustContentPage = () => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
-        backgroundColor: "#FFF",
+        backgroundColor: "#F9F5F2",
       }}
     >
       {/* Header */}
@@ -54,7 +55,9 @@ const AdjustContentPage = () => {
           borderBottom: "1px solid #E0E0E0",
         }}
       >
-        <IconButton>
+        <IconButton onClick={() => {
+        router.push("/adhd");
+      }}>
           <CloseIcon />
         </IconButton>
         <Typography variant="h6" fontWeight="bold">
@@ -80,7 +83,7 @@ const AdjustContentPage = () => {
             elevation={1}
             sx={{
               padding: 2,
-              backgroundColor: index === 0 ? "#F5F5F5" : "#E0E7FF",
+              backgroundColor: index === 0 ? "#F5F5F5" : "#E7D7C6",
               alignSelf: index === 0 ? "flex-end" : "flex-start",
               maxWidth: "60%",
             }}
@@ -95,11 +98,11 @@ const AdjustContentPage = () => {
         sx={{
           padding: 2,
           marginTop: "auto",
-          
+
         }}
       >
         <Swiper spaceBetween={16} slidesPerView="auto" pagination={{ clickable: true }}>
-          <SwiperSlide style={{ height: "150px", width: "auto"  }}>
+          <SwiperSlide className="flex items-center justify-between relative" style={{ height: "120px", width: "auto" }}>
             <Paper
               elevation={2}
               sx={{
@@ -108,7 +111,7 @@ const AdjustContentPage = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 borderRadius: 4,
-                backgroundColor: "#F4F8FF",
+                backgroundColor: "#E7D7C6",
                 height: "100%",
               }}
             >
@@ -121,7 +124,7 @@ const AdjustContentPage = () => {
               </Typography>
             </Paper>
           </SwiperSlide>
-          <SwiperSlide style={{ height: "150px", width: "auto" }}>
+          <SwiperSlide className="flex items-center justify-between relative" style={{ height: "120px", width: "auto" }}>
             <Paper
               elevation={2}
               sx={{
@@ -130,7 +133,7 @@ const AdjustContentPage = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 borderRadius: 4,
-                backgroundColor: "#F4F8FF",
+                backgroundColor: "#E7D7C6",
                 height: "100%",
               }}
             >
@@ -143,7 +146,7 @@ const AdjustContentPage = () => {
               </Typography>
             </Paper>
           </SwiperSlide>
-          <SwiperSlide style={{ height: "150px", width: "auto"  }}>
+          <SwiperSlide className="flex items-center justify-between relative" style={{ height: "120px", width: "auto" }}>
             <Paper
               elevation={2}
               sx={{
@@ -152,16 +155,16 @@ const AdjustContentPage = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 borderRadius: 4,
-                backgroundColor: "#F4F8FF",
+                backgroundColor: "#E7D7C6",
                 height: "100%",
               }}
             >
               <EditIcon sx={{ fontSize: 40, color: "#B2876B" }} />
               <Typography fontWeight="bold" mt={1}>
-                Update Content
+                Request Sources
               </Typography>
               <Typography fontSize="small" color="textSecondary">
-                Edit existing text
+                Verify reference details
               </Typography>
             </Paper>
           </SwiperSlide>

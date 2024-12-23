@@ -4,6 +4,7 @@ import { Box, Paper } from "@mui/material";
 import { useRouter } from "next/navigation";
 import ChatIcon from "@mui/icons-material/Chat";
 
+
 const TrendingTopics = () => {
   const router = useRouter();
 
@@ -67,6 +68,7 @@ const TrendingTopics = () => {
         position: "relative",
       }}
     >
+      
       {/* Header */}
       <h1
         className="title"

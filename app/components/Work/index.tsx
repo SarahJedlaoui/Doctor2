@@ -8,42 +8,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-
+import { Box} from "@mui/material";
+import { useRouter } from "next/navigation";
+import ChatIcon from "@mui/icons-material/Chat";
 interface ProductType {
     imgSrc: string;
     name: string;
     description: string;
     price: string;
 }
-const products: ProductType[] = [
-    {
-        imgSrc: '/images/Cook/product2.jpg',
-        name: "Product One",
-        description: "A description of product one.",
-        price: "$29.99",
-    },
-    {
-        imgSrc: '/images/Cook/product1.jpg',
-        name: "Product Two",
-        description: "A description of product two.",
-        price: "$39.99",
-    },
-    {
-        imgSrc: '/images/Cook/product3.jpg',
-        name: "Product Three",
-        description: "A description of product three.",
-        price: "$49.99",
-    },
-    {
-        imgSrc: '/images/Cook/product4.jpg',
-        name: "Product Four",
-        description: "A description of product four.",
-        price: "$59.99",
-    }
-
-]
 
 const Work = () => {
+     const router = useRouter();
     return (
 
 
@@ -448,6 +424,28 @@ const Work = () => {
           Validate the Content
         </button>
             </div>
+
+            {/* Floating Chat Icon */}
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+          width: "60px",
+          height: "60px",
+          backgroundColor: "#FFFFFF",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          cursor: "pointer",
+        }}
+        onClick={() => router.push("/chat")}
+      >
+        <ChatIcon sx={{ color: "#000000" }} />
+      </Box>
         </div>
 
     )
