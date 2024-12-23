@@ -47,27 +47,26 @@ const Work = () => {
     return (
 
 
-        <div>
-            <div className='-mt-20 mx-auto max-w-7xl py-40 px-6' id="about-section">
-                <div className='text-center mb-14' >
-                    <Fade direction={'up'} delay={800} cascade damping={1e-1} triggerOnce={true}>
-                        <p className='text-3xl lg:text-5xl font-semibold text-lightgrey'>Review the ADHD <br /> Module Draft</p>
-                    </Fade>
-                    <Fade direction={'up'} delay={800} cascade damping={1e-1} triggerOnce={true}>
-                        <p className='text-black lg:text-lg font-normal mt-2 mb-2 lg:text-start text-center'>Make edits or approve the content for publishing</p>
-                    </Fade>
-                </div>
+        <div className='bg-[#F9F5F2]'>
+            <div className='-mt-20 mx-auto max-w-7xl py-20 px-6' id="about-section">
 
                 {/* Content Highlights */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#8F6B55] mb-6">
+                    <h1
+                        className="title1"
+                        style={{
+                            marginBottom: "10px",
+                            color: "#8F6B55",
+                        }}
+                    >
                         Content Highlights
-                    </h2>
+                    </h1>
+
                     <Swiper
                         modules={[Navigation]}
                         navigation
                         spaceBetween={16}
-                        slidesPerView={2.2}
+                        slidesPerView={1.2}
                         breakpoints={{
                             640: { slidesPerView: 2.2 },
                             768: { slidesPerView: 3 },
@@ -75,7 +74,7 @@ const Work = () => {
                     >
                         {/* Slide 1 */}
                         <SwiperSlide>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm relative">
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm relative">
                                 <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
                                     Introduction
                                 </h3>
@@ -87,7 +86,7 @@ const Work = () => {
                                     professional, and personal life.
                                 </p>
                                 <button
-                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300"
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
                                     aria-label="Remove"
                                 >
                                     ×
@@ -95,9 +94,9 @@ const Work = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm relative">
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm relative">
                                 <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
-                                    Introduction
+                                    Symptoms
                                 </h3>
                                 <p className="text-xs text-gray-600">
                                     What is ADHD? <br />
@@ -107,7 +106,7 @@ const Work = () => {
                                     professional, and personal life.
                                 </p>
                                 <button
-                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300"
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
                                     aria-label="Remove"
                                 >
                                     ×
@@ -115,9 +114,9 @@ const Work = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm relative">
+                            <div className="bg-[#FFFFFf] p-4 rounded-xl shadow-sm relative">
                                 <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
-                                    Introduction
+                                    Management Tips
                                 </h3>
                                 <p className="text-xs text-gray-600">
                                     What is ADHD? <br />
@@ -127,7 +126,27 @@ const Work = () => {
                                     professional, and personal life.
                                 </p>
                                 <button
-                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300"
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                    aria-label="Remove"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="bg-[#FFFFFf] p-4 rounded-xl shadow-sm relative">
+                                <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    Apps to help
+                                </h3>
+                                <p className="text-xs text-gray-600">
+                                    What is ADHD? <br />
+                                    ADHD is a neurodevelopmental disorder characterized
+                                    by patterns of inattention, hyperactivity, and impulsivity. It
+                                    affects both children and adults and can impact academic,
+                                    professional, and personal life.
+                                </p>
+                                <button
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
                                     aria-label="Remove"
                                 >
                                     ×
@@ -139,30 +158,37 @@ const Work = () => {
 
                 {/* Trusted Sources */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#8F6B55] mb-6">
+                    <h1
+                        className="title1"
+                        style={{
+                            marginBottom: "10px",
+                            color: "#8F6B55",
+                        }}
+                    >
                         Trusted Sources
-                    </h2>
+                    </h1>
+
                     <Swiper
                         modules={[Navigation]}
                         navigation
                         spaceBetween={16}
-                        slidesPerView={1.5}
+                        slidesPerView={1.2}
                         breakpoints={{
-                            640: { slidesPerView: 2 },
-                            768: { slidesPerView: 2 },
+                            640: { slidesPerView: 3 },
+                            768: { slidesPerView: 3 },
                         }}
                     >
                         {/* Slide 1 */}
                         <SwiperSlide>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
                                 {/* Text Section */}
                                 <div className="flex-1">
                                     <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
-                                        Expert Contributors
+                                        Expert <br /> Contributors
                                     </h3>
                                     <p className="text-xs text-gray-600">
                                         Dr. Abby <br />
-                                        A globally recognized specialist in ADHD <br/> with years of clinical
+                                        A globally recognized specialist in ADHD <br /> with years of clinical
                                         and research experience.
                                     </p>
                                 </div>
@@ -178,7 +204,7 @@ const Work = () => {
 
                                 {/* Close Button */}
                                 <button
-                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300"
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
                                     aria-label="Remove"
                                 >
                                     ×
@@ -189,11 +215,11 @@ const Work = () => {
 
                         {/* Slide 2 */}
                         <SwiperSlide>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
                                 {/* Text Section */}
                                 <div className="flex-1">
                                     <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
-                                        Additional Contributor
+                                        Academic and Medical Publications
                                     </h3>
                                     <p className="text-xs text-gray-600">
                                         Dr. John <br />
@@ -201,8 +227,8 @@ const Work = () => {
                                         a focus on children and young adults.
                                     </p>
                                 </div>
-                                 {/* Image Section */}
-                                 <div className="w-20 h-20 -mb-12 ">
+                                {/* Image Section */}
+                                <div className="w-20 h-20 -mb-12 ">
                                     <img
                                         src="/images/Banner/doctor.svg"
                                         alt="Dr. Abby"
@@ -210,7 +236,7 @@ const Work = () => {
                                     />
                                 </div>
                                 <button
-                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300"
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
                                     aria-label="Remove"
                                 >
                                     ×
@@ -219,41 +245,208 @@ const Work = () => {
                         </SwiperSlide>
                     </Swiper>
 
-                    {/* Other sections */}
 
-                <h2 className="text-lg font-semibold text-[#8F6B55] mt-10 mb-6">
-                    Products
-                </h2>
-                <Swiper
-                    modules={[Navigation]}
-                    navigation
-                    spaceBetween={16}
-                    slidesPerView={2.2}
-                    breakpoints={{
-                        640: { slidesPerView: 2 },
-                        768: { slidesPerView: 3 },
-                    }}
-                >
-                    {products.map((product, index) => (
-                        <SwiperSlide key={index}>
-                            <div className="bg-[#F4F8FF] p-4 rounded-xl shadow-sm relative flex flex-col items-center">
-                                <Image
-                                    src={product.imgSrc}
-                                    alt={product.name}
-                                    width={100}
-                                    height={100}
-                                    className="mb-4"
-                                />
-                                <h3 className="text-md font-semibold text-[#CBB59D] mb-2">{product.name}</h3>
-                                <p className="text-xs text-gray-600 mb-2">{product.description}</p>
-                                <p className="text-md font-bold text-black">{product.price}</p>
+                    <div className="mb-8">
+                        <h1
+                            className="title1"
+                            style={{
+                                marginTop:"10px",
+                                marginBottom: "10px",
+                                color: "#8F6B55",
+                            }}
+                        >
+                           Tools and ressources 
+                        </h1>
+
+                        <Swiper
+                            modules={[Navigation]}
+                            navigation
+                            spaceBetween={16}
+                            slidesPerView={1.2}
+                            breakpoints={{
+                                640: { slidesPerView: 2.2 },
+                                768: { slidesPerView: 3 },
+                            }}
+                        >
+                            {/* Slide 1 */}
+
+                            <SwiperSlide>
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
+                                {/* Text Section */}
+                                <div className="flex-1">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    ADHD Daily Planner Template
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    A printable tool to help patients create a structured routine.
+                                    </p>
+                                </div>
+
+                                {/* Image Section */}
+                                <div className="w-20 h-20 -mb-16 ">
+                                    <img
+                                        src="/images/Banner/book.svg"
+                                        alt="Dr. Abby"
+                                        className="w-35 h-35 object-cover"
+                                    />
+                                </div>
+
+                                {/* Close Button */}
+                                <button
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                    aria-label="Remove"
+                                >
+                                    ×
+                                </button>
                             </div>
                         </SwiperSlide>
-                    ))}
-                </Swiper>
-                       
-                </div>
+                            <SwiperSlide>
+                                <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm relative ">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    ADHD Experts  <br/>  Podcast
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    Engaging episodes featuring specialists discussing ADHD management and insights.                                    </p>
+                                    <button
+                                        className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                        aria-label="Remove"
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm relative">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    Focus Enhancement <br/> Checklist
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    Quick tips and strategies to improve concentration and productivity.
+                                    </p>
+                                    <button
+                                        className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                        aria-label="Remove"
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="bg-[#FFFFFf] p-4 rounded-xl shadow-sm relative">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    ADHD Symptom  <br /> Tracker
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    Monitor progress and patterns for a better treatment plan.
+                                    </p>
+                                    <button
+                                        className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                        aria-label="Remove"
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
 
+
+
+                    {/* Other sections */}
+                    <h1
+                        className="title1"
+                        style={{
+                            marginTop: "5px",
+                            marginBottom: "10px",
+                            color: "#8F6B55",
+                        }}
+                    >
+                        Products or Medications
+                    </h1>
+
+
+                    <Swiper
+                        modules={[Navigation]}
+                        navigation
+                        spaceBetween={16}
+                        slidesPerView={1.2}
+                        breakpoints={{
+                            640: { slidesPerView: 3 },
+                            768: { slidesPerView: 3 },
+                        }}
+                    >
+                        {/* Slide 1 */}
+                        <SwiperSlide>
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm flex items-center justify-between relative">
+                                {/* Text Section */}
+                                <div className="flex-1">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    Noise-canceling headphones
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    Improve focus and reduce distractions in noisy environments.
+                                    </p>
+                                </div>
+
+                                {/* Image Section */}
+                                <div className="w-20 h-20 -mb-12 ">
+                                    <img
+                                        src="/images/Banner/headphone.svg" // Update to the correct image path
+                                        alt="Dr. Abby"
+                                        className="w-35 h-35 object-cover"
+                                    />
+                                </div>
+
+                                {/* Close Button */}
+                                <button
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                    aria-label="Remove"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        </SwiperSlide>
+
+
+                        {/* Slide 2 */}
+                        <SwiperSlide>
+                            <div className="bg-[#FFFFFF] p-4 rounded-xl shadow-sm flex items-center justify-between relative"
+                             style={{
+                                height: "135px", // Fixed height for the slide
+                              }}
+                            >
+                                {/* Text Section */}
+                                <div className="flex-1">
+                                    <h3 className="text-md font-semibold text-[#CBB59D] mb-2">
+                                    Adderall
+                                    </h3>
+                                    <p className="text-xs text-gray-600">
+                                    FDA-approved stimulant<br/> for managing ADHD <br/> symptoms.
+                                    </p>
+                                </div>
+                                {/* Image Section */}
+                                <div className="w-12 h-15 -mb-12 ">
+                                    <img
+                                        src="/images/Banner/adderall.svg"
+                                        alt="Dr. Abby"
+                                        className="w-25 h-25 object-cover"
+                                    />
+                                </div>
+                                <button
+                                    className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center bg-[#CBB59D33] rounded-full text-gray-500 hover:bg-gray-300"
+                                    aria-label="Remove"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                 
+
+                </div>
+                <button className="bg-[#7A939E] text-white text-lg font-medium py-3 px-6 rounded-lg w-full text-center">
+          Validate the Content
+        </button>
             </div>
         </div>
 
