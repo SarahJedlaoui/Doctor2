@@ -13,22 +13,53 @@ import FolderIcon from "@mui/icons-material/Folder";
 import SendIcon from "@mui/icons-material/Send";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const AdjustContentPage = () => {
   const router = useRouter();
-  const [messages, setMessages] = useState<string[]>([
-    "Hi, I’m here to help! What changes would you like to make to the ADHD module?",
+  const [messages, setMessages] = useState<{ text: string; sender: "user" | "assistant" }[]>([
+    { text: "Hi, I’m here to help! What changes would you like to make to the ADHD module?", sender: "assistant" },
   ]);
   const [inputValue, setInputValue] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = () => {
-    if (inputValue.trim()) {
-      setMessages((prev) => [...prev, inputValue]);
-      setInputValue(""); // Clear the input field
+  const handleSend = async () => {
+    if (!inputValue.trim()) return;
+  
+    const userMessage = inputValue.trim();
+  
+    // Display user's message
+    setMessages((prev) => [...prev, { text: userMessage, sender: "user" }]);
+    setInputValue(""); // Clear the input field
+  
+    try {
+      setLoading(true);
+  
+      // Use axios for client-side API request
+      const response = await axios.post("https://doctornuri-2a235f63c343.herokuapp.com/api/content/handle-command", {
+        command: userMessage, // Sending the user's command
+      });
+  
+      if (!response.data) {
+        throw new Error("No response data received");
+      }
+  
+      const assistantResponse =
+        response.data.answer || response.data.message || "I couldn't understand your request. Please try again.";
+  
+      // Display assistant's response
+      setMessages((prev) => [...prev, { text: assistantResponse, sender: "assistant" }]);
+    } catch (error) {
+      console.error("Error handling command:", error);
+      setMessages((prev) => [...prev, { text: "Sorry, I couldn't process your request. Please try again later.", sender: "assistant" }]);
+    } finally {
+      setLoading(false);
     }
   };
+  
+  
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
@@ -55,9 +86,11 @@ const AdjustContentPage = () => {
           borderBottom: "1px solid #E0E0E0",
         }}
       >
-        <IconButton onClick={() => {
-        router.push("/adhd");
-      }}>
+        <IconButton
+          onClick={() => {
+            router.push("/adhd");
+          }}
+        >
           <CloseIcon />
         </IconButton>
         <Typography variant="h6" fontWeight="bold">
@@ -83,18 +116,17 @@ const AdjustContentPage = () => {
             elevation={1}
             sx={{
               padding: 2,
-              backgroundColor: index === 0 ? "#F5F5F5" : "#E7D7C6",
-              alignSelf: index === 0 ? "flex-end" : "flex-start",
+              backgroundColor: message.sender === "assistant" ? "#F5F5F5" : "#E7D7C6",
+              alignSelf: message.sender === "assistant" ? "flex-end" : "flex-start",
               maxWidth: "60%",
             }}
           >
-            <Typography>{message}</Typography>
+            <Typography>{message.text}</Typography>
           </Paper>
         ))}
       </Box>
-
-      {/* Swipable Cards */}
-      <Box
+            {/* Swipable Cards */}
+            <Box
         sx={{
           padding: 2,
           marginTop: "auto",
@@ -183,7 +215,7 @@ const AdjustContentPage = () => {
       >
         <TextField
           fullWidth
-          placeholder="How can I help you?"
+          placeholder="Ask me a question..."
           variant="outlined"
           size="small"
           value={inputValue}
@@ -194,7 +226,7 @@ const AdjustContentPage = () => {
             backgroundColor: "#F4F8FF",
           }}
         />
-        <IconButton onClick={handleSend}>
+        <IconButton onClick={handleSend} disabled={loading}>
           <SendIcon />
         </IconButton>
       </Box>
