@@ -1,6 +1,6 @@
 # 🩺 NURI - AI-Powered Content Management for Doctors
 
-![NURI](nuri-logo.png) <!-- Replace with your logo or relevant image -->
+![NURI](nuri.png) <!-- Replace with your logo or relevant image -->
 
 **NURI** is a revolutionary AI-powered platform designed to help doctors manage their professional websites, educate their patients, and streamline personalized content creation. With trending topics, interactive tools, and a conversational AI assistant, NURI empowers doctors to maintain their professional presence while saving time.
 
